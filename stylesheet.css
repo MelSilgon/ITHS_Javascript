@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/* Description
+01. Root settings
+02. Body & HTML settings
+03. Navbar
+04. Slideshow
+05. Departments
+06. Footer
+07. Media Queries
+*/
+
+/********** 01. Root Settings **********/
+
+:root {
+  --one: #393E41;
+  --two: #F7F5F1;
+  --three: #e2020f;
+  /*
+  --four: ;
+  --five: ;
+  */
+  --black: #000000;
+  --white: #ffffff;
+
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-secondary: 'Open Sans', sans-serif;
+  --ff-logo: 'Cinzel', serif;
+}
+
+* {
+  font-family: var(--ff-primary);
+  box-sizing: border-box;
+}
+
+/********** 02. Body & HTML **********/
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  top: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  margin-top: 3rem;
+}
+
+/********** 03. Navbar **********/
+
+/* navbar */
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.2rem 2rem;
+  background: var(--two);
+  color: var(--one);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 300ms ease;
+  z-index: 202;
+}
+
+.headerStart {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  align-items: center;
+  padding: 0.2rem 2rem;
+  color: var(--two);
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+}
+
+.logo {
+  font-family: var(--ff-logo);
+  font-weight: 400;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: var(--three);
+}
+
+.logoStart {
+  font-family: var(--ff-logo);
+  font-weight: 400;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.nav a {
+  color: var(--one);
+}
+
+.nav ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav li {
+  padding-right: 6vw;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.navStart a {
+  color: var(--two);
+}
+
+.navStart ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navStart li {
+  padding-right: 6vw;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Scroller */
+header.scroll-up {
+  transform: translateY(-100%);
+}
+
+header.scroll-down {
+  transform: translateY(0);
+}
+
+
+/*---------Main---------*/
+
+/********** 04. Slideshow **********/
+
+
+
+/*Slideshow*/
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+  height: auto;
+}
+
+#slideOne,
+#slideTwo,
+#slideThree,
+#slideFour {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  height: 80vh;
+}
+
+#slideOne {
+  background-color: var(--one);
+  background-image: linear-gradient(rgba(45, 28, 77, 0.7), rgba(255, 255, 255, 0.1)),
+    url(img/slide-1.jpg);
+}
+
+#slideTwo {
+  background-color: var(--one);
+  background-image: linear-gradient(rgba(45, 28, 77, 0.7), rgba(255, 255, 255, 0.1)),
+    url(img/slide-2.jpg);
+}
+
+#slideThree {
+  background-color: var(--one);
+  background-image: linear-gradient(rgba(45, 28, 77, 0.7), rgba(255, 255, 255, 0.1)),
+    url(img/slide-3.jpg);
+}
+
+#slideFour {
+  background-color: var(--one);
+  background-image: linear-gradient(rgba(45, 28, 77, 0.7), rgba(255, 255, 255, 0.1)),
+    url(img/slide-4.jpg);
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #adadad;
+  font-weight: bold;
+  font-size: 30px;
+  transition: .6s ease;
+  border-radius: 0 3px 3px 0;
+  z-index: 200;
+}
+
+.next {
+  right: -5px;
+  border-radius: 3px 3px 3px 3px
+}
+
+.prev {
+  left: -5px;
+  border-radius: 3px 3px 3px 3px
+}
+
+.prev:hover,
+.next:hover {
+  color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.8)
+}
+
+.textSlide {
+  color: #f2f2f2;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: auto;
+  text-align: center;
+  background-color: rgba(3, 3, 3, 0.6);
+}
+
+.textSlide p {
+  margin: 0;
+}
+
+.textSlide a {
+  color: var(--two);
+  text-decoration: underline;
+}
+
+.titleSlide {
+  font-weight: 700;
+}
+
+.dotContainer {
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color .6s ease
+}
+
+.active,
+.dot:hover {
+  background-color: #717171
+}
+
+/*Chart settings*/
+
+.chart {
+  display: flex;
+  justify-content: center;
+  width: 60rem;
+  height: 50rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Hero Image*/
+
+.hero-content {
+  color: var(--white);
+  /*background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;*/
+  width: 80%;
+  height: auto;
+  margin: 1rem;
+  padding: 1rem;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+#hero-headline {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 0;
+  text-align: center;
+}
+
+#hero-text {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+main h2 {
+  text-align: center;
+  font-weight: 400;
+  padding-top: 1rem;
+}
+
+
+/********** 05. Categories *********/
+.depWrapper {
+  margin-left: 14vw;
+  margin-right: 14vw;
+}
+
+#depContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#depContainer>* {
+  margin: 20px;
+  width: 14vw;
+  background-color: var(--two);
+}
+
+/*objects results*/
+.result {
+background-color: var(--two);
+width: 220px;
+margin: 10px;
+text-align: center;
+line-height: 75px;
+font-size: 30px;
+}
+
+.card:hover {
+  top: -4px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card h1 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 1rem;
+  color: var(--one);
+}
+
+.card .thumb {
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
+}
+
+/*
+/*First grid
+.first-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  height: auto;
+  padding-right: 15vw;
+  padding-left: 15vw;
+  gap: 20px;
+  justify-content: center;
+  grid-template-areas:
+    "grid1"
+    "grid2"
+    "grid3";
+}
+
+#grid1,
+#grid3,
+#grid2 {
+  color: var(--black);
+  background-color: var(--two);
+}
+
+.cake,
+.bread,
+.dessert {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 30vh;
+  width: 100%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-grid-container h5 {
+  text-align: center;
+}
+
+.first-grid-container a:link,
+.first-grid-container a:visited {
+  background-color: var(--two);
+  color: var(--black);
+  border: 1px solid var(--black);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.first-grid-container a:hover,
+.first-grid-container a:active {
+  background-color: var(--black);
+  color: white;
+}
+*/
+
+
+.socials {
+  width: 100%;
+  height: 50px;
+  background-color: #393E41;
+}
+
+
+/********** 06. Footer **********/
+
+.footer-container {
+  display: grid;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  z-index: 201;
+  background-color: var(--one);
+  color: var(--two);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr), 1rem;
+  grid-template-areas:
+    "footer1 footer1"
+    "footer2 footer2"
+    "footer3 footer3";
+}
+
+#footer1 {
+  grid-area: footer1;
+  height: auto;
+  margin: 2rem;
+  margin-top: 2vh;
+  text-align: center;
+}
+
+#footer2 {
+  grid-area: footer2;
+  height: auto;
+  margin: 2rem;
+  margin-top: 2vh;
+  text-align: center;
+}
+
+#footer3 {
+  grid-area: footer3;
+  padding: 1rem;
+  color: var(--two);
+  background-color: var(--one);
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.footer-text {
+  color: var(--white);
+}
+
+
+
+/********** 07. Media Queries ***********/
+
+
+
+/*Make the navbar responsive
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+
+  .navbar-links ul li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .navbar-links ul li a {
+    padding: 0.05rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    background-color: var(--one);
+  }
+
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}*/
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed
+@media only screen and (max-device-width: 768px) {
+  .img1 {
+    background-attachment: scroll;
+  }
+
+  .hero-img {
+    background-attachment: scroll;
+  }
+}*/

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheet.css">
+  <meta name="description" content="The Met's public domain collection">
+  <title>The Met Collection</title>
+</head>
+
+<body>
+  <!--     NAVBAR       -->
+  <header class="scroll-up">
+      <div class="logo">
+          <ul>
+              <li>The Met Collection</li>
+          </ul>
+      </div>
+      <div class="nav">
+          <ul>
+            <li>
+              <a href="#home" class="scroll-link">Home</a>
+            </li>
+            <li>
+              <a href="#departments" class="scroll-link">Departments</a>
+            </li>
+            <li>
+              <a href="#chart" class="scroll-link">Overview</a>
+            </li>
+            <li>
+              <a href="cities.html" class="scroll-link">Cities</a>
+            </li>
+          </ul>
+      </div>
+  </header>
+
+<main>
+
+  <div class="slideshow-container">
+  <div class="slideshow-inner">
+
+  <div id="home">
+  <div class="headerStart">
+      <div class="logoStart">
+          <ul>
+              <li>The Met Collection</li>
+          </ul>
+      </div>
+      <div class="navStart">
+          <ul>
+            <li>
+              <a href="#home" class="scroll-link">Home</a>
+            </li>
+            <li>
+              <a href="#departments" class="scroll-link">Departments</a>
+            </li>
+            <li>
+              <a href="#chart" class="scroll-link">Overview</a>
+            </li>
+            <li>
+              <a href="cities.html" class="scroll-link">Cities</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
+  <a class="next" onclick='plusSlides(1)'>&#10095;</a>
+
+  <div class="hero-content">
+    <h1 id="hero-headline">Browse Met's public domain collection</h1>
+  </div>
+
+  <div class="mySlides fade">
+    <div id="slideOne" alt="1"></div>
+    <div class="textSlide">
+      <a href="https://www.metmuseum.org/art/collection/search/436535">
+      <p class="titleSlide">Wheat Field with Cypresses</p>
+      <p>1889, Vincent van Gogh </p>
+      </a>
+    </div>
+  </div>
+
+  <div class="mySlides fade">
+    <div id="slideTwo" alt="2"></div>
+    <div class="textSlide">
+      <a href="https://www.metmuseum.org/art/collection/search/12019">
+      <p class="titleSlide">Victory</p>
+      <p>1892-1903, Augustus Saint-Gaudens</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="mySlides fade">
+    <div id="slideThree" alt="3"></div>
+    <div class="textSlide">
+      <a href="https://www.metmuseum.org/art/collection/search/10154">
+      <p class="titleSlide">The Rocky Mountains, Lander's Peak</p>
+      <p>1863, Albert Bierstadt</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="mySlides fade">
+    <div id="slideFour" alt="4"></div>
+    <div class="textSlide">
+      <a href="https://www.metmuseum.org/art/collection/search/17139">
+      <p class="titleSlide">Eagle</p>
+      <p>1809-11, William Rush</p>
+      </a>
+    </div>
+  </div>
+
+  </div>
+</div>
+<br>
+
+<div class="dotContainer">
+  <span class="dot" onclick='currentSlide(1)'></span>
+  <span class="dot" onclick='currentSlide(2)'></span>
+  <span class="dot" onclick='currentSlide(3)'></span>
+  <span class="dot" onclick='currentSlide(4)'></span>
+</div>
+
+</div>
+
+    <!-- <h2></h2>
+    <section class="first-grid-container">
+      <div id="grid1">
+        <div class="cake"></div>
+        <div class="card-content">
+          <h5>Tårtor</h5>
+          <a href="#">Läs mer</a>
+        </div>
+      </div>
+
+    </section> -->
+
+  <h2 id="departments">Collection Areas</h2>
+  <!-- Met departments -->
+  <div class="depWrapper">
+  <div id="depContainer"></div>
+  </div>
+
+  <h2 id="chart">Collection overview</h2>
+  <div class="chart">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  </main>
+
+
+  <section class="socials">
+    <div><h2>Socials</h2></div>
+  </section>
+
+  <!--   FOOTER    -->
+  <footer>
+    <div class="footer-container">
+      <div id="footer1">
+        <h3>...</h3>
+        <span class="footer-text">
+
+        </span>
+      </div>
+      <div id="footer2">
+
+        </span>
+      </div>
+      <div id="footer3">
+        <p>©<span id="date"></span> The Metropolitan Museum of Art. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  </div>
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="index.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
