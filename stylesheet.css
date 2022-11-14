@@ -341,17 +341,14 @@ main h2 {
 #depContainer>* {
   margin: 20px;
   width: 14vw;
+  height: 200px;
   background-color: var(--two);
 }
 
 /*objects results*/
-.result {
-background-color: var(--two);
-width: 220px;
-margin: 10px;
-text-align: center;
-line-height: 75px;
-font-size: 30px;
+.card {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .card:hover {
@@ -359,17 +356,20 @@ font-size: 30px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
-.card h1 {
+.card h3 {
   font-size: 1.4rem;
   text-align: center;
+  align-items: flex-end;
   margin: 1rem;
   color: var(--one);
 }
 
 .card .thumb {
-  padding-bottom: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  align-items: stretch;
+  position: relative;
 }
 
 /*

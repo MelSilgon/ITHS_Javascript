@@ -12,8 +12,8 @@ fetch('https://collectionapi.metmuseum.org/public/collection/v1/departments')
       <a href="https://www.metmuseum.org/art/collection/search?department=${met.departmentId}" class="card">
       <div id="${met.departmentId}">
         <div class="thumb" style="background-image: url(img/depThumb${met.departmentId}.jpg);">
-        </div>
         <h3>${met.displayName}</h3>
+        </div>
       </div>
     </a>
       `
@@ -26,13 +26,12 @@ fetch('https://collectionapi.metmuseum.org/public/collection/v1/departments')
 
 //******** Chart ********
 
+let data = [],
+  labels = []
+
 /*fetch('https://avancera.app/cities/')
   .then((response) => response.json())
   .then((result) => {
-    const ctx = document.getElementById('myChart') ??(context)
-
-  const data = [],
-      labels = []
 
     for (??) {
       const city = result[??]
@@ -41,8 +40,18 @@ fetch('https://collectionapi.metmuseum.org/public/collection/v1/departments')
       labels.push(met.displayName)  -- dep name
     }*/
 
+/*fetch('https://avancera.app/cities/')
+.then((response) => response.json())
+.then((result) => {
+
+for (??) {
+  const depName = result[i]
+
+  data.push(city ??)  -- total obects
+  labels.push(depName)  -- dep name
+}*/
+
 const ctx = document.getElementById('myChart').getContext('2d');
-//
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
