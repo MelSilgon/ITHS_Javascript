@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;700&family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
 
 /* Description
-01. Root settings
-02. Body & HTML settings
+01. Root Settings
+02. Body & HTML Settings
 03. Navbar
 04. Slideshow
 05. Departments
-06. Footer
-07. Media Queries
+06. Chart Settings
+07. Footer
+08. Media Queries
 */
 
 /********** 01. Root Settings **********/
@@ -15,17 +17,16 @@
 :root {
   --one: #393E41;
   --two: #F7F5F1;
-  --three: #B10B14; /* #e2020f */
-  --four: #252a47;
-
-  /*--five: ;*/
+  --three: #A31332;
+  --four: #302C47;
+  --five: #b64359;
 
   --black: #000000;
   --white: #ffffff;
 
-  --ff-primary: 'Roboto', sans-serif;
-  --ff-secondary: 'Open Sans', sans-serif;
-  --ff-logo: 'Cinzel', serif;
+  --ff-primary: 'Roboto Mono', monospace;
+  --ff-secondary: 'Quicksand', sans-serif;
+  --ff-third: 'Poppins', sans-serif;
 }
 
 * {
@@ -33,7 +34,7 @@
   box-sizing: border-box;
 }
 
-/********** 02. Body & HTML **********/
+/********** 02. Body & HTML Settings **********/
 body,
 html {
   margin: 0;
@@ -73,6 +74,7 @@ header {
   width: 100%;
   transition: all 300ms ease;
   z-index: 202;
+  font-family: var(--ff-secondary);
 }
 
 .headerStart {
@@ -89,23 +91,30 @@ header {
 }
 
 .logo {
-  font-family: var(--ff-logo);
-  font-weight: 400;
+  font-family: var(--ff-third);
+  font-weight: 600;
   font-size: 1.6rem;
   text-transform: uppercase;
-  color: var(--three);
+  color: #e67399;
 }
 
 .logoStart {
-  font-family: var(--ff-logo);
-  font-weight: 400;
-  font-size: 1.8rem;
+  font-family: var(--ff-third);
+  font-weight: 500;
+  font-size: 1.9rem;
   text-transform: uppercase;
-  color: var(--white);
+  color: #e67399;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .nav a {
   color: var(--two);
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: var(--five);
+  transition: 0.4s;
 }
 
 .nav ul {
@@ -121,6 +130,12 @@ header {
 
 .navStart a {
   color: var(--two);
+  transition: 0.2s;
+}
+
+.navStart li a:hover {
+  color: #f082a7;
+  transition: 0.4s;
 }
 
 .navStart ul {
@@ -147,11 +162,15 @@ header.scroll-down {
 
 /*---------Main---------*/
 
-/********** 04. Slideshow **********/
-
 main {
   background: var(--two);
 }
+
+main h2 {
+  text-align: center;
+}
+
+/********** 04. Slideshow **********/
 
 /*Slideshow*/
 .slideshow-container {
@@ -181,25 +200,25 @@ main {
 
 #slideOne {
   background-color: var(--one);
-  background-image: linear-gradient(rgba(45, 28, 77, 0.7), rgba(255, 255, 255, 0.1)),
+  background-image: linear-gradient(rgba(45, 28, 77, 0.8), rgba(255, 255, 255, 0.1)),
     url(img/slide-1.jpg);
 }
 
 #slideTwo {
   background-color: var(--one);
-  background-image: linear-gradient(rgba(45, 28, 77, 0.7), rgba(255, 255, 255, 0.1)),
+  background-image: linear-gradient(rgba(45, 28, 77, 0.8), rgba(255, 255, 255, 0.1)),
     url(img/slide-2.jpg);
 }
 
 #slideThree {
   background-color: var(--one);
-  background-image: linear-gradient(rgba(45, 28, 77, 0.7), rgba(255, 255, 255, 0.1)),
+  background-image: linear-gradient(rgba(45, 28, 77, 0.8), rgba(255, 255, 255, 0.1)),
     url(img/slide-3.jpg);
 }
 
 #slideFour {
   background-color: var(--one);
-  background-image: linear-gradient(rgba(45, 28, 77, 0.7), rgba(255, 255, 255, 0.1)),
+  background-image: linear-gradient(rgba(45, 28, 77, 0.8), rgba(255, 255, 255, 0.1)),
     url(img/slide-4.jpg);
 }
 
@@ -246,6 +265,7 @@ main {
   width: auto;
   text-align: center;
   background-color: rgba(3, 3, 3, 0.6);
+  font-family: var(--ff-third);
 }
 
 .textSlide p {
@@ -270,7 +290,7 @@ main {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: #b7b3ca;
   border-radius: 50%;
   display: inline-block;
   transition: background-color .6s ease
@@ -278,35 +298,13 @@ main {
 
 .active,
 .dot:hover {
-  background-color: #717171
+  background-color: var(--four);
 }
 
-/*Chart settings*/
-
-.chartContent {
-  background-color: var(--white);
-}
-
-#chart {
-  padding-top: 4rem;
-}
-
-.chart {
-  display: flex;
-  justify-content: center;
-  width: 60rem;
-  height: auto;
-  align-items: center;
-  margin: 0 auto;
-  margin-bottom: 4rem;
-}
-
-/* Hero Image*/
+/*Slideshow Hero Content*/
 
 .hero-content {
   color: var(--white);
-  /*background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 8px;*/
   width: 80%;
   height: auto;
   margin: 1rem;
@@ -319,7 +317,7 @@ main {
 }
 
 #hero-headline {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
   margin-top: 0;
   text-align: center;
@@ -327,17 +325,12 @@ main {
 }
 
 #hero-text {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 1rem;
   font-weight: 400;
   text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
-main h2 {
-  text-align: center;
-  font-weight: 400;
-  padding-top: 1rem;
-}
 
 
 /********** 05. Categories *********/
@@ -345,6 +338,10 @@ main h2 {
 #departments {
   font-weight: 600;
   font-size: 2.5rem;
+  background-image: linear-gradient(90deg, #e67399, #f2a640);
+  background-position: bottom;
+  background-size: 100% 30%;
+  background-repeat: no-repeat;
 }
 
 .depWrapper {
@@ -363,7 +360,6 @@ main h2 {
 }
 
 /*objects results*/
-
 .card {
   margin: 1rem;
   position: relative;
@@ -409,8 +405,31 @@ main h2 {
   transform: scale(1);
 }
 
+/********** 06. Chart Settings **********/
 
-/********** 06. Footer **********/
+.chartContent {
+  background-color: var(--white);
+}
+
+#chart {
+  padding-top: 4rem;
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+/********** 07. Footer **********/
 
 .footer-container {
   display: grid;
@@ -428,19 +447,42 @@ main h2 {
     "footer3 footer3";
 }
 
+.footer-container a {
+  color: var(--two);
+  text-decoration: underline;
+}
+
 #footer1 {
   grid-area: footer1;
   height: auto;
-  margin: 0 2rem;
+  margin: 0 4rem 0 8rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.footer-container h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
   text-align: center;
+}
+
+#footer1 p {
+  font-size: 1.1rem;
 }
 
 #footer2 {
   grid-area: footer2;
   height: auto;
-  margin: 0 2rem;
-  text-align: center;
-  border-left: 1px solid var(--two);
+  margin: 0;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  background-color: #b64359;
+}
+
+#footer2 ul {
+  padding: 0 4rem;
+  margin: 0;
 }
 
 #footer3 {
@@ -451,70 +493,18 @@ main h2 {
   font-size: 1rem;
   text-align: center;
   width: 100%;
-  border-top: 1px solid var(--two);
-}
-
-.footer-text {
-  color: var(--white);
 }
 
 
-
-/********** 07. Media Queries ***********/
-
+/********** 08. Media Queries ***********/
 
 
-/*Make the navbar responsive
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-  }
-
-  .toggle-button {
-    display: flex;
-  }
-
-  .navbar-links {
-    display: none;
-    width: 100%;
-    height: auto;
-  }
-
-  .navbar-links ul {
-    width: 100%;
-    flex-direction: column;
-    padding-bottom: 1rem;
-  }
-
-  .navbar-links ul li {
-    text-align: center;
-    margin: 0.5rem 0;
-  }
-
-  .navbar-links ul li a {
-    padding: 0.05rem 1rem;
-  }
-
-  .navbar-links.active {
-    display: flex;
-    background-color: var(--one);
-  }
-
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}*/
-
-/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed
+/* Turn off parallax scrolling for all tablets and phones.*/
 @media only screen and (max-device-width: 768px) {
-  .img1 {
-    background-attachment: scroll;
+  #slideOne,
+  #slideTwo,
+  #slideThree,
+  #slideFour {
+    background-attachment: fixed;
   }
-
-  .hero-img {
-    background-attachment: scroll;
-  }
-}*/
+}

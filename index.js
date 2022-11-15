@@ -101,85 +101,91 @@ fetch('https://collectionapi.metmuseum.org/public/collection/v1/departments')
     console.log(error)
 });
 
+
+
+
 //******** Chart ********
 
+let yLabels = []; //Department name
+let labelIds = [];  //Department IDs
+let totalCollect = []; //19 values
 
-/*fetch('https://avancera.app/cities/')
-  .then((response) => response.json())
-  .then((result) => {
+chartIt()
 
-    for (??) {
-      const city = result[??]
+async function chartIt() {
+  await fetchData()
+  await fetchTotals()
 
-      data.push(city ??)  -- total obects
-      labels.push(met.displayName)  -- dep name
-    }*/
-
-
-
-/*    fetch('https://collectionapi.metmuseum.org/public/collection/v1/departments')
-.then((response) => response.json())
-  .then((result) => {
-    result.departments.forEach( met => {
-
-      let depName = met.displayName
-      labels.push(depName)
-    })
-})*/
-
-let depNames = [];
-
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: depNames,
-        datasets: [{
-          label: 'Total number of publicly-available objects for each collection area',
-          data: [200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 100, 100, 12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
+      labels: yLabels,
+      datasets: [{
+        label: 'Total number of publicly- available objects for each collection area',
+        data: totalCollect,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 205, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(201, 203, 207, 0.2)'
+        ],
+        borderColor: [
+          'rgb(255, 99, 132)',
+          'rgb(255, 159, 64)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(54, 162, 235)',
+          'rgb(153, 102, 255)',
+          'rgb(201, 203, 207)'
+        ],
+        borderWidth: 1
+      }]
     },
     options: {
-        indexAxis: 'y',
-        scales: {
-            y: {
-                beginAtZero: true
-            }
+      indexAxis: 'y',
+      scales: {
+        y: {
+          beginAtZero: true
         }
+      }
     }
-});
+  });
+}
 
-
+//FETCH LABELS
 async function fetchData() {
   const url = 'https://collectionapi.metmuseum.org/public/collection/v1/departments';
   const response = await fetch(url);
-  const datapoints = await response.json();
-  return datapoints;
+  const data = await response.json();
+  return data;
 }
 
-fetchData().then(datapoints => {
-  const depNames = datapoints.departments.map(
-    function(index){
-      return index.displayName;
-    })
-  console.log(depNames)
-
-  return depNames;
+fetchData().then(data => {
+  data.departments.forEach(met => {
+    let depName = met.displayName;
+    yLabels.push(depName);
+    let depId = met.departmentId;
+    labelIds.push(depId);
+  })
+  console.log(yLabels)
+  console.log(labelIds)
 })
+
+//FETCH TOTALS
+async function fetchTotals() {
+
+  for (i = 0; i < labelIds.length; i++) {
+    const url = "https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=" + labelIds[i];
+    await fetch(url)
+    .then(resp => resp.json())
+    .then((data) => {
+      totalCollect.push(data.total);
+      console.log(totalCollect)
+    })
+  console.log(totalCollect)
+  }
+}
