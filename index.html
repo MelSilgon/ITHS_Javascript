@@ -2,158 +2,187 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="stylesheet.css">
-  <meta name="description" content="The Met's public domain collection">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="stylesheet.css" />
+  <meta name="description" content="Browse The Met's public domain collection" />
   <title>The Met Collection</title>
 </head>
 
 <body>
-  <!--     NAVBAR       -->
+  <!--     NAVBAR SCROLL      -->
   <header class="scroll-up">
-      <div class="logo">
-          <ul>
-              <li>The Met Collection</li>
-          </ul>
-      </div>
-      <div class="nav">
-          <ul>
-            <li>
-              <a href="#home" class="scroll-link">Home</a>
-            </li>
-            <li>
-              <a href="#departments" class="scroll-link">Collection Areas</a>
-            </li>
-            <li>
-              <a href="#chart" class="scroll-link">Collection Overview</a>
-            </li>
-            <li>
-              <a href="cities.html" class="scroll-link">Cities</a>
-            </li>
-          </ul>
-      </div>
+    <div class="logo">
+      <ul>
+        <li>The Met Collection</li>
+      </ul>
+    </div>
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="#home" class="scroll-link">Home</a>
+        </li>
+        <li>
+          <a href="#departments" class="scroll-link">Collection Areas</a>
+        </li>
+        <li>
+          <a href="#chart" class="scroll-link">Collection Overview</a>
+        </li>
+        <li>
+          <a href="cities.html" class="scroll-link">Cities</a>
+        </li>
+        <li class="dm-button">
+          <p>Toggle Dark mode
+            <input type="checkbox" class="darkmodeCheck" />
+          </p>
+        </li>
+      </ul>
+    </div>
   </header>
 
-<main>
+  <main>
+    <div class="slideshow-container">
+      <div class="slideshow-inner">
+        <!-- NAVBAR HERO -->
+        <div id="home">
+          <div class="headerStart">
+            <div class="logoStart">
+              <ul>
+                <li>The Met Collection</li>
+              </ul>
+            </div>
+            <div class="navStart">
+              <ul>
+                <li>
+                  <a href="#home" class="scroll-link">Home</a>
+                </li>
+                <li>
+                  <a href="#departments" class="scroll-link">Collection Areas</a>
+                </li>
+                <li>
+                  <a href="#chart" class="scroll-link">Collection Overview</a>
+                </li>
+                <li>
+                  <a href="cities.html" class="scroll-link">Cities</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-  <div class="slideshow-container">
-  <div class="slideshow-inner">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-  <div id="home">
-  <div class="headerStart">
-      <div class="logoStart">
-          <ul>
-              <li>The Met Collection</li>
-          </ul>
-      </div>
-      <div class="navStart">
-          <ul>
-            <li>
-              <a href="#home" class="scroll-link">Home</a>
-            </li>
-            <li>
-              <a href="#departments" class="scroll-link">Collection Areas</a>
-            </li>
-            <li>
-              <a href="#chart" class="scroll-link">Collection Overview</a>
-            </li>
-            <li>
-              <a href="cities.html" class="scroll-link">Cities</a>
-            </li>
-          </ul>
+        <div class="hero-content">
+          <h1 id="hero-headline">
+            Browse The Met's public domain collection
+          </h1>
+          <h2 id="hero-text">
+            Access to The Metropolitan Museum of Art's online collection
+            including publicly-available high-resolution images.
+          </h2>
+        </div>
+
+        <div class="mySlides fade">
+          <div id="slideTextOne">
+            <!--Info slide number one-->
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div id="slideTextTwo">
+            <!--Info slide number two-->
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div id="slideTextThree">
+            <!--Info slide number three-->
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div id="slideTextFour">
+            <!--Info slide number four-->
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    <br />
+    <!-- -->
 
-  <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
-  <a class="next" onclick='plusSlides(1)'>&#10095;</a>
+    <div class="dotContainer">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
 
-  <div class="hero-content">
-    <h1 id="hero-headline">Browse The Met's public domain collection</h1>
-    <h2 id="hero-text">Access to The Metropolitan Museum of Art's online collection including publicly-available high-resolution images.</h2>
-  </div>
+    <a class="anchor" id="departments"></a>
+    <h2 class="departments">Collection Areas</h2>
 
-  <div class="mySlides fade">
-    <div id="slideTextOne"><!--Info slide number one--> </div>
-  </div>
+    <!-- Met Collection Areas -->
+    <div class="depWrapper">
+      <div id="depContainer"></div>
+    </div>
 
-  <div class="mySlides fade">
-    <div id="slideTextTwo"><!--Info slide number two--> </div>
-  </div>
-
-  <div class="mySlides fade">
-    <div id="slideTextThree"><!--Info slide number three--> </div>
-  </div>
-
-  <div class="mySlides fade">
-    <div id="slideTextFour"><!--Info slide number four--> </div>
-  </div>
-
-  </div>
-</div>
-<br> <!-- -->
-
-<div class="dotContainer">
-  <span class="dot" onclick='currentSlide(1)'></span>
-  <span class="dot" onclick='currentSlide(2)'></span>
-  <span class="dot" onclick='currentSlide(3)'></span>
-  <span class="dot" onclick='currentSlide(4)'></span>
-</div>
-
-</div>
-
-  <h2 id="departments">Collection Areas</h2>
-
-  <!-- Met departments -->
-  <div class="depWrapper">
-  <div id="depContainer"></div>
-  </div>
-
-  <!-- Chart -->
-<div class="chartContent">
-
-  <h2 id="chart">Collection overview</h2>
-  <div class="chart">
-    <canvas id="myChart"></canvas>
-  </div>
-
-  </div>
-
+    <!-- Chart -->
+    <div class="chartContent">
+      <a class="anchor" id="chart"></a>
+      <h2 class="chartH">Collection overview</h2>
+      <div class="chart">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
   </main>
-
 
   <!--   FOOTER    -->
   <footer>
     <div class="footer-container">
-
       <div id="footer1">
         <h3>What is public domain?</h3>
-        <p>The public domain (PD) consists of all the creative work to which no exclusive intellectual property rights apply.</p>
-        <p>Those rights may have expired, been forfeited, expressly waived, or may be inapplicable. Because those rights have expired, anyone can legally use or reference those works without permission. (<a href="https://en.wikipedia.org/wiki/Public_domain" target="_blank">Wikipedia</a>)</p>
+        <p>
+          The public domain (PD) consists of all the creative work to which no
+          exclusive intellectual property rights apply.
+        </p>
+        <p>
+          Those rights may have expired, been forfeited, expressly waived, or
+          may be inapplicable. Because those rights have expired, anyone can
+          legally use or reference those works without permission. (<a
+            href="https://en.wikipedia.org/wiki/Public_domain" target="_blank">Wikipedia</a>)
+        </p>
       </div>
 
       <div id="footer2">
         <ul>
-          <li><h3>Links</h3></li>
-          <li><a href="https://www.metmuseum.org/art/collection/search?department=8" target="_blank">The Met museum</a></li>
-          <li><p><a href="https://metmuseum.github.io/" target="_blank">The Metropolitan Museum of Art Collection API</a></p></li>
+          <li>
+            <h3>Links</h3>
+          </li>
+          <li>
+            <a href="https://www.metmuseum.org/art/collection/search?department=8" target="_blank">The Met museum</a>
+          </li>
+          <li>
+            <p>
+              <a href="https://metmuseum.github.io/" target="_blank">The Metropolitan Museum of Art Collection API</a>
+            </p>
+          </li>
           <li></li>
         </ul>
       </div>
 
       <div id="footer3">
-        <p>This page ©<span id="date"></span> Mel Gonzalez.</p></div>
+        <p>This page ©<span id="date"></span> Mel Gonzalez.</p>
+      </div>
     </div>
   </footer>
 
-  </div>
   <!-- Chart JS -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  <!-- JS -->
   <script src="index.js"></script>
   <script src="app.js"></script>
 </body>
 
 </html>
+<!-- All kod validerat -->

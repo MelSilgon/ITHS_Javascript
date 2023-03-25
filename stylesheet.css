@@ -1,4 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;700&family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
 
 /* Description
@@ -9,7 +8,10 @@
 05. Departments
 06. Chart Settings
 07. Footer
-08. Media Queries
+08. Pages - Cities
+09. Dark Mode
+10. Media Queries
+
 */
 
 /********** 01. Root Settings **********/
@@ -72,7 +74,6 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  transition: all 300ms ease;
   z-index: 202;
   font-family: var(--ff-secondary);
 }
@@ -96,6 +97,18 @@ header {
   font-size: 1.6rem;
   text-transform: uppercase;
   color: #e67399;
+}
+
+.logo a,
+.logoStart a {
+  color: #e67399;
+  transition: 0.2s;
+}
+
+.logo a:hover,
+.logoStart a:hover {
+  color: #f2a640;
+  transition: 0.6s;
 }
 
 .logoStart {
@@ -150,6 +163,58 @@ header {
   text-transform: uppercase;
 }
 
+a.anchor {
+  display: block;
+  position: relative;
+  top: -4rem;
+  visibility: hidden;
+}
+
+/* Darkmode toggle */
+
+.dm-button {
+  align-items: flex-end;
+}
+
+.dm-button p {
+  color: var(--two);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+label {
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  right: 20px;
+  top: 20px;
+  border: 4px solid #403961;
+  border-radius: 20px;
+  background-color: #232035;
+}
+
+label:before {
+  position: absolute;
+  content: '';
+  width: 26px;
+  height: 26px;
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  background: var(--five);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+label.active:before {
+  left: 53px;
+  background: rgb(179, 169, 169);
+}
+
+label.active {
+  border: 4px solid #777777;
+}
+
 /* Scroller */
 header.scroll-up {
   transform: translateY(-100%);
@@ -187,7 +252,8 @@ main h2 {
 #slideOne,
 #slideTwo,
 #slideThree,
-#slideFour {
+#slideFour,
+#imgOne {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -335,7 +401,7 @@ main h2 {
 
 /********** 05. Categories *********/
 
-#departments {
+.departments {
   font-weight: 600;
   font-size: 2.5rem;
   background-image: linear-gradient(90deg, #e67399, #f2a640);
@@ -411,7 +477,7 @@ main h2 {
   background-color: var(--white);
 }
 
-#chart {
+.chartH {
   padding-top: 4rem;
   font-weight: 600;
   font-size: 2.2rem;
@@ -440,7 +506,7 @@ main h2 {
   background-color: var(--four);
   color: var(--two);
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr), 1rem;
+  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     "footer1 footer2"
     "footer1 footer2"
@@ -495,12 +561,188 @@ main h2 {
   width: 100%;
 }
 
+/********** 08. Pages - Cities ***********/
 
-/********** 08. Media Queries ***********/
+a.anchorPages {
+  display: block;
+  position: relative;
+  top: -6.5rem;
+  visibility: hidden;
+}
+
+#imgOne {
+  background-color: var(--one);
+  height: 55vh;
+  background-image: linear-gradient(rgba(45, 28, 77, 0.8), rgba(255, 255, 255, 0.1)),
+    url(img/img-cities.jpg);
+}
+
+.formWrap {
+  margin: auto;
+}
+
+.citiesList {
+  margin-top: 2rem;
+}
+
+.citiesTitles {
+  margin: 0;
+  font-weight: 600;
+  font-size: 2rem;
+  background-image: linear-gradient(90deg, #e67399, #f2a640);
+  background-position: bottom;
+  background-size: 100% 30%;
+  background-repeat: no-repeat;
+}
+
+.formPostWrapper {
+  margin-top: 4rem;
+}
+
+.formPostWrapper,
+.formPutWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.formDelWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+form input {
+  margin-top: 0;
+}
+
+button {
+  padding: 6px;
+  margin: 25px 0 15px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+form p {
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.citiesWrapper {
+  background-color: var(--white);
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  margin: auto;
+}
+
+#formPost,
+#formPut,
+#formDel {
+  margin: 2rem auto;
+  padding: 1rem 3rem 2rem 3rem;
+  background: var(--white);
+  border: 2px red;
+  border-radius: 25px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.cityList {
+  table-layout: fixed;
+  border-collapse: collapse;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.cityList thead {
+  background-color: var(--five);
+  color: #fff;
+}
+
+table td,
+table th {
+  padding: 10px 50px;
+}
+
+table tbody tr:nth-of-type(even) {
+  background: var(--two);
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--four);
+}
+
+.textId {
+  font-weight: 400;
+  color: #292929;
+}
+
+/********** 09. Pages - Dark Mode ***********/
+
+body.dark {
+  background: #0b0a0f;
+  color: #fff;
+}
+
+body.dark header {
+  background: #252236;
+}
+
+body.dark main {
+  background: #111018;
+  color: #e0e0e0;
+}
+
+body.dark .dot {
+  background-color: #44424d;
+}
+
+body.dark .active,
+body.dark .dot:hover {
+  background-color: var(--two);
+}
+
+body.dark #departments {
+  background-image: linear-gradient(90deg, #642f41, #745121);
+}
+
+body.dark .chartContent {
+  background-color: #0b0a0f;
+}
+
+body.dark .footer-container {
+  background-color: #252236;
+}
+
+body.dark #footer2 {
+  background-color: #692633;
+}
+
+body.dark #footer3 {
+  background-color: #611022;
+}
+
+body.dark .cityList thead {
+  background-color: #611022;
+  color: #fff;
+}
+
+body.dark .citiesWrapper {
+  background-color: #0b0a0f;
+}
+
+/********** 10. Media Queries ***********/
 
 
 /* Turn off parallax scrolling for all tablets and phones.*/
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 768px) {
   #slideOne,
   #slideTwo,
   #slideThree,
@@ -508,3 +750,5 @@ main h2 {
     background-attachment: fixed;
   }
 }
+
+/*All kod validerat*/

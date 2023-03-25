@@ -11,102 +11,164 @@
 </head>
 
 <body>
-  <!--     NAVBAR       -->
+  <!--     NAVBAR SCROLL      -->
   <header class="scroll-up">
-      <div class="logo">
-          <ul>
-              <li>The Met Collection</li>
-          </ul>
-      </div>
-      <div class="nav">
-          <ul>
-            <li>
-              <a href="#home" class="scroll-link">Home</a>
-            </li>
-            <li>
-              <a href="#departments" class="scroll-link">Collection Areas</a>
-            </li>
-            <li>
-              <a href="#chart" class="scroll-link">Collection Overview</a>
-            </li>
-            <li>
-              <a href="cities.html" class="scroll-link">Cities</a>
-            </li>
-          </ul>
-      </div>
+    <div class="logo">
+      <ul>
+        <li>
+          <a href="index.html">The Met Collection</a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#changeCity">Change City</a>
+        </li>
+        <li>
+          <a href="#deleteCity">Delete City</a>
+        </li>
+        <li>
+          <a href="#citiesList">Cities List</a>
+        </li>
+        <li class="dm-button">
+          <p>Toggle Dark mode
+            <input type="checkbox" class="darkmodeCheck">
+          </p>
+        </li>
+      </ul>
+    </div>
   </header>
 
-<main>
+  <main>
 
-  <div class="slideshow-container">
-  <div class="slideshow-inner">
+    <div class="slideshow-container">
 
-  <div id="home">
-  <div class="headerStart">
-      <div class="logoStart">
-          <ul>
-              <li>The Met Collection</li>
-          </ul>
+      <!-- NAVBAR HERO -->
+      <div id="home">
+        <div class="headerStart">
+          <div class="logoStart">
+            <ul>
+              <li>
+                <a href="index.html">The Met Collection</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navStart">
+            <ul>
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#changeCity">Change City</a>
+              </li>
+              <li>
+                <a href="#deleteCity">Delete City</a>
+              </li>
+              <li>
+                <a href="#citiesList">Cities List</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="navStart">
-          <ul>
-            <li>
-              <a href="#home" class="scroll-link">Home</a>
-            </li>
-            <li>
-              <a href="#departments" class="scroll-link">Collection Areas</a>
-            </li>
-            <li>
-              <a href="#chart" class="scroll-link">Collection Overview</a>
-            </li>
-            <li>
-              <a href="cities.html" class="scroll-link">Cities</a>
-            </li>
-          </ul>
+
+      <div class="hero-content">
+        <h1 id="hero-headline">Cities</h1>
+        <h2 id="hero-text">Make your own city and publish it to an API.</h2>
       </div>
+
+      <div class="heroImg">
+        <div id="imgOne">
+          <!--Hero image-->
+        </div>
+      </div>
+
     </div>
-  </div>
+    <div class="formWrap">
 
-  <div class="hero-content">
-    <h1 id="hero-headline">Cities</h1>
-    <h2 id="hero-text">Make your own city and publish it to an API.</h2>
-  </div>
+      <!-- POST -->
+      <div class="formPostWrapper">
+        <h2 class="citiesTitles">Make a new City</h2>
 
-  <div class="heroImg">
-    <div id="imgOne"><!--Hero image--> </div>
-  </div>
+        <form id="formPost">
+          <p>Name:</p>
+          <input type="text" id="namePost" placeholder="Name for your city" size="30" required><br>
+          <p>Population:</p>
+          <input type="text" id="populationPost" placeholder="100000" required><br>
+          <button type="submit">Post your City</button>
+        </form>
+      </div>
 
-  </div>
-</div>
+      <!-- PUT -->
+      <div class="formPutWrapper">
+        <a class="anchorPages" id="changeCity"></a>
+        <h2 class="citiesTitles">Change City</h2>
 
-</div>
-<div class="formContainer">
-  <h2>Cities Form</h2>
-</div>
+          <form id="formPut">
+            <p>Choose ID:</p>
+            <select name="cities" id="idCityList" required> <!-- drop down ID list -->
+            </select><br>
+            <p>Name:</p>
+            <input type="text" id="namePut" placeholder="City name" required><br>
+            <p>Population:</p>
+            <input type="text" id="populationPut" placeholder="100000" required><br>
 
+            <button type="submit">Change City</button>
+          </form>
 
+        </div>
+
+        <!-- DELETE -->
+        <a class="anchorPages" id="deleteCity"></a>
+        <h2 class="citiesTitles">Delete City</h2>
+        <div class="formDelWrapper">
+
+          <form id="formDel">
+
+            <p>Choose ID:</p>
+            <select name="citiesDel" id="idCityListDel" required> <!-- drop down ID list -->
+            </select><br>
+
+            <button type="submit">Delete City</button>
+          </form>
+
+        </div>
+
+      </div>
+      <div class="citiesWrapper">
+        <a class="anchorPages" id="citiesList"></a>
+        <h2 class="citiesList">Cities List</h2>
+        <div class="listContainer">
+          <table class="cityList">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Population</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
   </main>
-
 
   <!--   FOOTER    -->
   <footer>
     <div class="footer-container">
-      <div id="footer1">
-        <h3>...</h3>
-        <p></p>
-      </div>
-      <div id="footer2">
-        <p>...</p>
-        </span>
-      </div>
       <div id="footer3">
-        <p><span id="date"></span> © Mel Gonzalez</p></div>
+        <p>This page <span id="date"></span> ©Mel Gonzalez</p>
+      </div>
     </div>
   </footer>
 
-  </div>
-  <script src="index.js"></script>
-  <script src="app.js"></script>
+  <script src="citiesForm.js"></script>
+  <script src="app-pages.js"></script>
 </body>
 
 </html>
+<!-- All kod validerat -->
